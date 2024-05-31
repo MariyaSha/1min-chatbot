@@ -9,14 +9,14 @@ context = nltk.corpus.genesis.raw(
 
 # load question answering model
 model = pipeline(
-    model="deepset/roberta-base-squad2"
+    model = "deepset/roberta-base-squad2"
 )
 
 # receive user input continuously 
 while True:
     # collect input
     user_input = input(
-        "Your question:"
+        "\nYour question:"
     )
 
     if user_input == "exit":
@@ -24,8 +24,8 @@ while True:
     else:
         # enter input into model
         output = model(
-            question=user_input, 
-            context=context
+            question = user_input, 
+            context = context
         )
 
         print(
@@ -38,3 +38,4 @@ while True:
             # print answer
             output['answer']
         )
+        
